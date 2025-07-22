@@ -1,0 +1,45 @@
+﻿@page
+@model RazorPizzeria.Pages.PizzaModel
+@{
+}
+@* <a class="nav-link text-dark" asp-area="" asp-page="Forms/Pizza">Custom Pizza</a>
+<a class="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a> *@
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize text-black">
+            Our great Selection for Pizzas!</h1>
+            <h4>
+            Choose one ,or try our Pizza Bulder! Than order and done!
+        </h4>
+           
+       <h4>No Need give you any of your details</h4>
+       <h4>We Know ALready everything!</h4>
+       <p class="smallText"<i>only one pizza per order</i></p>
+    </div>
+    <div class="container">
+<div class="col-12 mb-5 mt-5">
+    <div class="w-100 row makeyourOwndiv">
+        <div class="col-4"></div>
+                <img src="~/images/Pizzas/pizza.png" classs="w-100" />
+    </div>
+    <div class="col-8 align-items-center">
+        <div class="align-middle MakeYourOwnText">
+           
+            <h3 style="text-align:left">Cretae Your own Pizzaa</h3>
+                    <p style="text-align:left">Make Your own Pizzaab with pizza maker</p>
+                    <a class="btn btn-primary mt-1" asp-area="" asp-page="Forms/CustomPizza">Try Now</a>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="col-4 mb-5">
+    @foreach(var pizza in Model.fakePizzaDB){
+       var imagePath = "~/Images/Pizzas/" + (pizza.ImageTitle + ".png");
+            <img src="@imagePath" class="w-100" asp-append-version=true />
+        <a class=" btn btn-primary mt-1" asp-area="" asp-page="Checkout/Checkout">Get This Pizza</a>
+    }
+        </div>
+   
+</div>
+
+ 
